@@ -79,7 +79,7 @@
 
   <div hidden class="template" id="main">
     <div id="message-cards-container" class="mdc-layout-grid">
-      <div id="invoiceHeader" class="mdc-layout-grid__inner">...</div>
+      
       <div id="cards" class="mdc-layout-grid__inner">CardsPF</div>
       
     </div>
@@ -132,7 +132,33 @@
       </div>
     </div>
   </div>
-<!-- this is the start of the block for invoice drill through-->
+
+<!-- this is the invoice drill (copied from the restaurant below-->
+
+
+
+<div hidden class="template" id="invoice-header">
+  <header class="mdc-layout__header mdc-layout__header--transparent"></header>
+  <!--Removed data-fir-style-->
+  <div id="test" class="mdc-layout-grid">
+    <div class="review max_width_600">
+      <div class="mdc-layout-grid__inner">
+        TEST PF APR6 833
+        <span data-fir-content="name"></span>
+        <span class="price"></span>
+
+        <!--<div class="rating"></div>-->
+        <span class="invoicenumber"></span>
+        <span class="client"></span>
+      </div>
+    </div>
+  </div>
+    
+
+</div>
+
+<!-- end  of invoice drill-->
+<!-- this is the start of the block for restaurant drill through-->
   <div hidden class="template" id="restaurant-header">
     <header class="mdc-layout__header mdc-layout__header--transparent" data-fir-stylea="backgroundImage:photo">
 

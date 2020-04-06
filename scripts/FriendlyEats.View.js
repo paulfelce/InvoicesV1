@@ -328,10 +328,10 @@ FriendlyEats.prototype.viewInvoice = function(id) {
         dialog.show();
       };
 
-      sectionHeaderEl = that.renderTemplate('restaurant-header', data);
-      sectionHeaderEl
-        .querySelector('.rating')
-        .append(that.renderRating(data.avgRating));
+      sectionHeaderEl = that.renderTemplate('invoice-header', data);
+      // sectionHeaderEl
+      //   .querySelector('.rating') -- removed from invoice header
+      //   .append(that.renderRating(data.avgRating));
 
       // sectionHeaderEl
       //   .querySelector('.price')
@@ -342,11 +342,11 @@ FriendlyEats.prototype.viewInvoice = function(id) {
         .querySelector('.invoicenumber')
         .append(data.InvoiceNumber);
         
-        /* put invoice header with lines */
-        var mainEl;
-        mainEl = that.renderTemplate('main');
-        console.log('appending TEST aPPEND PF Apr5 2119');
-        mainEl.querySelector('#invoiceHeader').append("<h2>TEST APPEND<h2>");
+        // /* put invoice header with lines */
+        // var mainEl;
+        // mainEl = that.renderTemplate('main');
+        // console.log('appending TEST aPPEND PF Apr5 2119');
+        // mainEl.querySelector('#invoiceHeader').append("<h2>TEST APPEND<h2>");
 
 
         return doc.ref.collection('invoicelines').orderBy('invoicelinenumber', 'asc').get();
