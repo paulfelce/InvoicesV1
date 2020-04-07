@@ -418,6 +418,9 @@
   margin-top:25px;  
 }
 
+.invoice-payment{
+    font-weight:bold;  
+}
 
  #restaurant-header .mdc-layout-grid {
    --mdc-layout-grid-margin-desktop: 0px 10px 0px 10px;
