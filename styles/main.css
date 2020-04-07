@@ -414,6 +414,11 @@
    height: 76px;
  }
  
+ .invoiceheader-info{
+  margin-top:25px;  
+}
+
+
  #restaurant-header .mdc-layout-grid {
    --mdc-layout-grid-margin-desktop: 0px 10px 0px 10px;
    --mdc-layout-grid-margin-tablet: 0px 10px 0px 10px;
@@ -536,3 +541,5 @@
  aside textarea:focus {
    outline: none;
  }
+
+

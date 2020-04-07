@@ -338,9 +338,9 @@ FriendlyEats.prototype.viewInvoice = function(id) {
       //   .append(that.renderPrice(data.price));
       
 
-       sectionHeaderEl
-        .querySelector('.invoicenumber')
-        .append(data.InvoiceNumber);
+      //  sectionHeaderEl
+      //   .querySelector('.invoicenumber')
+      //   .append(data.InvoiceNumber);
         
         // /* put invoice header with lines */
         // var mainEl;
