@@ -414,9 +414,7 @@
    height: 76px;
  }
  
- .invoiceheader-info{
-  margin-top:25px;  
-}
+
 
 .invoice-payment{
     font-weight:bold;  
@@ -464,6 +462,11 @@
    /* IE6-9 */
    
  }
+
+ .invoiceheader-info{
+  margin-top:25px;  
+}
+
  .invoiceline-test{
   display: inline-block;
   width:50px

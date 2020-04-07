@@ -31,15 +31,6 @@ FriendlyEats.prototype.getAllInvoices = function(renderer) {
 
 
 
-// FriendlyEats.prototype.getAllRestaurants = function(renderer) {
-//   var query = firebase.firestore()
-//   .collection('invoices')
-//   .orderBy('avgRating', 'desc')
-//   .limit(50);
-
-//   this.getDocumentsInQuery(query, renderer);
-// };
-
 FriendlyEats.prototype.getDocumentsInQuery = function(query, renderer) {
   query.onSnapshot(function(snapshot) {
     if (!snapshot.size) return renderer.empty(); // Display "There are no restaurants".
