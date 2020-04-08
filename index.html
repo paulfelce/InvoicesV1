@@ -80,14 +80,17 @@
   <div hidden class="template" id="main">
     <div id="message-cards-container" class="mdc-layout-grid">
   
-      <div id="cards" class="mdc-layout-grid__inner">CardsPF</div>
+      <div id="cards" class="mdc-layout-grid__inner"><!--CardsPF--></div>
   
     </div>
     
       <div class="review max_width_600 invoice-payment">
-        <span>Payment</span><span>Total Amount payable</span><span></span>
-        
+        <span>Payment</span>
+        <div>
+        <span>Total Amount payable:</span><span>total here</span>
       </div>
+      </div>
+      
     
     </div>
 
@@ -147,8 +150,9 @@
   <header class="mdc-layout__header mdc-layout__header--transparent"></header>
   
     <div class="review max_width_600">       
-  
-        <div data-fir-content="InvoiceClient"></div>
+      <div class="invoiceheader-info">
+        <div class="invoiceheader-info" data-fir-content="InvoiceClient"></div>
+      </div>
         <div data-fir-content="InvoiceClientAddress1"></div>
         <div data-fir-content="InvoiceClientAddress2"></div>
         <div data-fir-content="InvoiceClientAddress3"></div>
@@ -239,14 +243,16 @@
       <div class="mdc-card__title" data-fir-style="backgroundImage:photo"></div>
       <h2>Invoice</h2>
       <h2 data-fir-content="client">...</h2>
-      <span class="info" data-fir-content="InvoiceDate">...</span>
-      <span class="info" data-fir-content="InvoiceNumber">...</span>
-      <span class="info" data-fir-content="InvoiceTotal">...</span>
+      <span>Date</span><span class="info" data-fir-content="invoicedate">...</span>
+      <span>Invoice number:</span><span class="info" data-fir-content="invoicenumber">...</span>
+      <span>Invoice total:</span><span class="info" data-fir-content="InvoiceTotal">...</span>
       <div class="mdc-card__supporting-text">
-        
-      
-        
-        
+  Is this the real life?
+  <div>    
+      <button id="duplicate-invoice" class="mdc-button fab" style="background-color: yellow;">
+        <i class="material-icons">add</i>
+      </button>    
+  </div>
         <h2 data-fir-content="name">...</h2>
         <span class="info price"></span>
         <div class="details">

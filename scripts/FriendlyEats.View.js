@@ -72,9 +72,27 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
       var el = that.renderTemplate('restaurant-card', data);
       el.querySelector('.rating').append(that.renderRating(data.avgRating));
       el.querySelector('.price').append(that.renderPrice(data.price));
+
       // Setting the id allows to locating the individual restaurant card
       el.querySelector('.location-card').id = 'doc-' + doc.id;
+      
+      // Attach an event to the duplicate invoice button
+      
+
+   var button = el.querySelector('#duplicate-invoice');
   
+
+      button.addEventListener('click', function(event) {        
+        alert('duplicate invoice clicked')
+        // addingMockData = true;    
+        // event.target.style.opacity = '0.4';
+        // event.target.innerText = 'Please wait...';    
+        // that.addMockRestaurants().then(function() {
+        //   that.rerender();
+        // });
+      });
+
+
       var existingLocationCard = mainEl.querySelector('#doc-' + doc.id);
       if (existingLocationCard) {
         // modify
@@ -118,7 +136,7 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
     }, renderer);
   } else {
     this.getAllInvoices(renderer);
-    //this.getAllRestaurants(renderer);
+    
   }
 
   var toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
@@ -327,6 +345,7 @@ FriendlyEats.prototype.viewInvoice = function(id) {
 
         dialog.show();
       };
+
 
       sectionHeaderEl = that.renderTemplate('invoice-header', data);
       
