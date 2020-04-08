@@ -32,7 +32,7 @@ FriendlyEats.prototype.getAllInvoices = function(renderer) {
   var query = firebase.firestore()
   .collection('invoices')
   .orderBy('avgRating', 'desc')
-  .limit(5);
+  .limit(50);
 
   this.getDocumentsInQuery(query, renderer);
 };

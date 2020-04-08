@@ -71,8 +71,8 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
       };
   
       var el = that.renderTemplate('restaurant-card', data);
-      el.querySelector('.rating').append(that.renderRating(data.avgRating));
-      el.querySelector('.price').append(that.renderPrice(data.price));
+      //el.querySelector('.rating').append(that.renderRating(data.avgRating));
+      //el.querySelector('.price').append(that.renderPrice(data.price));
 
       // Setting the id allows to locating the individual restaurant card
       el.querySelector('.location-card').id = 'doc-' + doc.id;
@@ -101,8 +101,7 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
              invoiceclientaddress5:data.invoiceclientaddress5
              
 
-         });
-         event.stopPropogation();
+         });         
 
       });
 
