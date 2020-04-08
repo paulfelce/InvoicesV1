@@ -80,15 +80,21 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
       // Attach an event to the duplicate invoice button      
       var button = el.querySelector('#duplicate-invoice');  
       button.addEventListener('click', function(event) {        
-        alert('duplicate invoice clicked !!')  ;
+        //alert('duplicate invoice clicked !!')  ;
+        console.log('add clicked');
+        console.log(data.client);
         //that.addMockRestaurants();      
          that.addInvoice({ 
-             name:"invoicename testpf 8apr",
+             name:data.name,
              avgRating:3,
              price:1,
              numRatings:1,
              category:"Dim Sum",
              city:"Raleigh",
+             client:data.client,
+             invoicedate:data.invoicedate,
+             invoicenumber:data.invoicenumber + 'copy',
+             invoicetotal:data.invoicetotal,
              photo:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_13.png"
 
          });
