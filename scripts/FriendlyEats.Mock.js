@@ -20,8 +20,8 @@
  */
 FriendlyEats.prototype.addMockRestaurants = function() {
   var promises = [];
-
-  for (var i = 0; i < 20; i++) {
+console.log('adding mocks 8apr 0744')
+  for (var i = 0; i <1; i++) {
     var name =
         this.getRandomItem(this.data.words) +
         ' ' +
@@ -34,7 +34,7 @@ FriendlyEats.prototype.addMockRestaurants = function() {
     var numRatings = 0;
     var avgRating = 0;
 
-    var promise = this.addRestaurant({
+    var promise = this.addInvoice({
       name: name,
       category: category,
       price: price,
@@ -48,7 +48,8 @@ FriendlyEats.prototype.addMockRestaurants = function() {
       alert('addRestaurant() is not implemented yet!');
       return Promise.reject();
     } else {
-      promises.push(promise);
+//      promises.push(promise);
+console.log(i);
     }
   }
 

@@ -20,7 +20,15 @@ FriendlyEats.prototype.addRestaurant = function(data) {
     return collection.add(data)
 };
 
-FriendlyEats.prototype.getAllInvoices = function(renderer) {
+
+FriendlyEats.prototype.addInvoice = function(data) {
+  console.log('adding invoice pf 8apr 0759');
+  var collection = firebase.firestore().collection('invoices');
+  return collection.add(data)
+};
+
+
+FriendlyEats.prototype.getAllInvoices = function(renderer) {  
   var query = firebase.firestore()
   .collection('invoices')
   .orderBy('avgRating', 'desc')
@@ -32,9 +40,14 @@ FriendlyEats.prototype.getAllInvoices = function(renderer) {
 
 
 FriendlyEats.prototype.getDocumentsInQuery = function(query, renderer) {
+  
+  console.log(query);
+  
   query.onSnapshot(function(snapshot) {
     if (!snapshot.size) return renderer.empty(); // Display "There are no restaurants".
-
+    console.log('getDocumentsInQuery  pf 8apr 735a');
+    console.log(snapshot);
+    
     snapshot.docChanges().forEach(function(change) {
       if (change.type === 'removed') {
         renderer.remove(change.doc);
@@ -46,15 +59,19 @@ FriendlyEats.prototype.getDocumentsInQuery = function(query, renderer) {
 };
 
 FriendlyEats.prototype.getInvoice = function(id) {
+  console.log('firebase getInvoice pF 8Apr 0725');
+  console.log(id);
   return firebase.firestore().collection('invoices').doc(id).get();
 };
 
 FriendlyEats.prototype.getRestaurant = function(id) {
+  console.log('firebase getRestaurant pF 8Apr 0725');
+  console.log(id);
   return firebase.firestore().collection('invoices').doc(id).get();
 };
 
 FriendlyEats.prototype.getFilteredRestaurants = function(filters, renderer) {
-
+console.log('getting filtered restaurants pf 8apr 734');
   var query = firebase.firestore().collection('restaurants');
 
   if (filters.category !== 'Any') {

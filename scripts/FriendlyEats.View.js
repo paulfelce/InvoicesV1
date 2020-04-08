@@ -25,6 +25,7 @@ FriendlyEats.prototype.initTemplates = function() {
 };
 
 FriendlyEats.prototype.viewHome = function() {
+  console.log('getting all restaurants pf apr8 0728');
   this.getAllRestaurants();
 };
 
@@ -76,20 +77,23 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
       // Setting the id allows to locating the individual restaurant card
       el.querySelector('.location-card').id = 'doc-' + doc.id;
       
-      // Attach an event to the duplicate invoice button
-      
-
-   var button = el.querySelector('#duplicate-invoice');
-  
-
+      // Attach an event to the duplicate invoice button      
+      var button = el.querySelector('#duplicate-invoice');  
       button.addEventListener('click', function(event) {        
-        alert('duplicate invoice clicked')
-        // addingMockData = true;    
-        // event.target.style.opacity = '0.4';
-        // event.target.innerText = 'Please wait...';    
-        // that.addMockRestaurants().then(function() {
-        //   that.rerender();
-        // });
+        alert('duplicate invoice clicked !!')  ;
+        //that.addMockRestaurants();      
+         that.addInvoice({ 
+             name:"invoicename testpf 8apr",
+             avgRating:3,
+             price:1,
+             numRatings:1,
+             category:"Dim Sum",
+             city:"Raleigh",
+             photo:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_13.png"
+
+         });
+
+
       });
 
 
@@ -356,23 +360,17 @@ FriendlyEats.prototype.viewInvoice = function(id) {
 
     .then(function (invoicelines){
     
-      console.log('reading inv lines PF apr5 1946');
+      
       var mainEl;
 
       if (invoicelines.size) {
         mainEl = that.renderTemplate('main');
 
         invoicelines.forEach(function(invoiceline) {
-          var data = invoiceline.data();
-          console.log('invoice line data PF apr5 1952');
-          var el = that.renderTemplate('review-card', data);
-          //el.querySelector('.rating').append(that.renderRating(data.rating));
-          mainEl.querySelector('#cards').append(el);
+          var data = invoiceline.data();          
+          var el = that.renderTemplate('review-card', data);          
+          mainEl.querySelector('#cards').append(el);       
           
-          console.log('getting invoice lines PF Apr5 1943');
-
-          
-
         });
       } else {
         mainEl = that.renderTemplate('no-ratings', {
