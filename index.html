@@ -242,16 +242,20 @@
     <div class="location-card mdc-card mdc-shadow--2dp" data-fir-click="go_to_invoice">
       
       <h2 data-fir-content="client">...</h2>
-      <span>Date</span><span class="info" data-fir-content="invoicedate">...</span>
-      <span>Invoice number:</span><span class="info" data-fir-content="invoicenumber">...</span>
-      <span>Invoice total:</span><span class="info" data-fir-content="invoicetotal">...</span>
+      <div  style="margin-top:25px"><!-- need this div to stop the spans from splitting over lines-->
+      <span>Date</span><span style="margin-top:25px" class="info" data-fir-content="invoicedate">...</span>
+      <div  style="margin-top:25px"></div>
+      <span>Invoice number:</span><span  class="info" data-fir-content="invoicenumber">...</span>
+      <div  style="margin-top:25px"></div>
+      <span>Invoice total:</span><span  class="info" data-fir-content="invoicetotal">...</span>
+    </div>
       <div class="mdc-card__supporting-text">  
 
 
       </div>
     </div>
-    <div class="location-card mdc-card mdc-shadow--2dp">
-      <div>    
+    <div class="location-card mdc-card mdc-shadow--2dp" >
+      <div style="background-color: aqua;">    
         <button id="duplicate-invoice" class="mdc-button fab" style="background-color: yellow;">
           <i class="material-icons">add</i>
         </button>    
