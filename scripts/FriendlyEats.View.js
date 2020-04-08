@@ -98,11 +98,11 @@ FriendlyEats.prototype.viewList = function(filters, filter_description) {
              invoiceclientaddress2:data.invoiceclientaddress2,
              invoiceclientaddress3:data.invoiceclientaddress3,
              invoiceclientaddress4:data.invoiceclientaddress4,
-             invoiceclientaddress5:data.invoiceclientaddress5,
-             photo:"https://storage.googleapis.com/firestorequickstarts.appspot.com/food_13.png"
+             invoiceclientaddress5:data.invoiceclientaddress5
+             
 
          });
-
+         event.stopPropogation();
 
       });
 
@@ -269,7 +269,7 @@ FriendlyEats.prototype.initFilterDialog = function() {
 
     dialog.querySelectorAll('#page-all .mdc-list-item').forEach(function(el) {
       el.addEventListener('click', function() {
-        var id = el.id.split('-').slice(1).join('-');
+        var id = el.id.split('-').slice(1).join('-');        
         displaySection(id);
       });
     });
@@ -279,7 +279,7 @@ FriendlyEats.prototype.initFilterDialog = function() {
     if (id === 'page-all') {
       renderAllList();
     }
-
+    
     pages.forEach(function(sel) {
       if (sel.id === id) {
         sel.style.display = 'block';
